@@ -9,4 +9,7 @@ defmodule ElixirExMonGame.Game do
   def info do
     Agent.get(__MODULE__, & &1)
   end
+
+  def player, do: info().player
+  def computer, do: info().computer
 end
