@@ -1,7 +1,7 @@
 defmodule ElixirExMonGame.Player do
-  required_keys = [:life, :name, :move_rnd, :move_avg, :move_heal]
-  @enforce_keys required_keys
-  defstruct required_keys
+  @required_keys [:life, :name, :move_rnd, :move_avg, :move_heal]
+  @enforce_keys @required_keys
+  defstruct @required_keys
 
   @max_life 100
 
