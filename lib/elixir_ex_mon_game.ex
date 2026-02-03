@@ -1,6 +1,6 @@
 defmodule ElixirExMonGame do
   alias ElixirExMonGame.{Player, Game}
-  alias ElixirExMonGame.Game.Status
+  alias ElixirExMonGame.Game.{Status, Actions}
 
   @computer_name "Robotinick"
   @doc """
@@ -17,5 +17,9 @@ defmodule ElixirExMonGame do
     |> Game.start(player)
 
     Status.print_game_status(Game.info())
+  end
+
+  def make_move(move) do
+    Actions.fetch_move(move)
   end
 end
