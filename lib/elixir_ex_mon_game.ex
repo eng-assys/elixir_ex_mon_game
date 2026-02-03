@@ -1,7 +1,7 @@
 defmodule ElixirExMonGame do
-  alias ElixirExMonGame.Player
-  alias ElixirExMonGame.Game
+  alias ElixirExMonGame.{Player, Game}
 
+  @computer_name "Robotinick"
   @doc """
     Creates a player
     ElixirExMonGame.create_player("Lucas", :chute, :soco, :cura)
@@ -11,7 +11,7 @@ defmodule ElixirExMonGame do
   end
 
   def start_game(player) do
-    "Robotinick"
+    @computer_name
     |> create_player(:punch, :kick, :heal)
     |> Game.start(player)
   end
