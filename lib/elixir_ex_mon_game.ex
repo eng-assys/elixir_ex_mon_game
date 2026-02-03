@@ -31,5 +31,7 @@ defmodule ElixirExMonGame do
       :move_heal -> Actions.heal()
       ^move -> Actions.attack(move)
     end
+
+    Status.print_game_status(Game.info())
   end
 end
