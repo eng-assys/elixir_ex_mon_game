@@ -10,6 +10,10 @@ defmodule ElixirExMonGame.Game do
     Agent.get(__MODULE__, & &1)
   end
 
+  def update(state) do
+    Agent.update(__MODULE__, fn _ -> state end)
+  end
+
   def player, do: info().player
   def computer, do: info().computer
   def turn, do: Map.get(info(), :turn)
