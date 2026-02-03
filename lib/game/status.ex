@@ -13,4 +13,8 @@ defmodule ElixirExMonGame.Game.Status do
     ============================
     """)
   end
+
+  def print_wrong_move_message(move) do
+    IO.puts("The move '#{move}' is not valid. Please choose a valid move.")
+  end
 end
