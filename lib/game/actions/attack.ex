@@ -27,5 +27,12 @@ defmodule ElixirExMonGame.Game.Actions.Attack do
   defp update_opponent_life(life, opponent) do
     Game.fetch_player(opponent)
     |> Map.put(:life, life)
+    |> update_game_state(opponent)
+  end
+
+  defp update_game_state(updated_player, opponent) do
+    Game.info()
+    |> Map.put(opponent, updated_player)
+    |> Game.update()
   end
 end
