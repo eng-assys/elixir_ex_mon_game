@@ -1,5 +1,6 @@
 defmodule ElixirExMonGame do
   alias ElixirExMonGame.{Player, Game}
+  alias ElixirExMonGame.Game.Status
 
   @computer_name "Robotinick"
   @doc """
@@ -14,5 +15,7 @@ defmodule ElixirExMonGame do
     @computer_name
     |> create_player(:punch, :kick, :heal)
     |> Game.start(player)
+
+    Status.print_game_status(Game.info())
   end
 end
