@@ -13,4 +13,10 @@ defmodule ElixirExMonGame.Game do
   def player, do: info().player
   def computer, do: info().computer
   def turn, do: Map.get(info(), :turn)
+  def fetch_player(type) do
+    case type do
+      :player -> player()
+      :computer -> computer()
+    end
+  end
 end
