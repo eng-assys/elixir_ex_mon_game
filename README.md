@@ -50,3 +50,16 @@ iex -S mix
 ```bash
 mix credo
 ```
+
+## Tutorial
+```bash
+iex -S mix
+```
+
+```elixir
+player = ElixirExMonGame.Player.build("Lucas", :chute, :soco, :cura)
+ElixirExMonGame.start_game(player)
+ElixirExMonGame.Game.info
+ElixirExMonGame.make_move(:chute)
+ElixirExMonGame.Game.info
+```
