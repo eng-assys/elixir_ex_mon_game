@@ -3,6 +3,8 @@ defmodule ElixirExMonGame.Player do
   @enforce_keys required_keys
   defstruct required_keys
 
+  @max_life 100
+
   # ElixirExMonGame.Player.build("Lucas", :chute, :soco, :cura)
   @spec build(any(), any(), any(), any()) :: %ElixirExMonGame.Player{
           life: 100,
@@ -13,7 +15,7 @@ defmodule ElixirExMonGame.Player do
         }
   def build(name, move_rnd, move_avg, move_heal) do
     %ElixirExMonGame.Player{
-      life: 100,
+      life: @max_life,
       name: name,
       move_rnd: move_rnd,
       move_avg: move_avg,
