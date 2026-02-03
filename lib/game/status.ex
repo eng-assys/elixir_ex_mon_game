@@ -1,17 +1,20 @@
 defmodule ElixirExMonGame.Game.Status do
-  def print_game_status(%{player: player, computer: computer, turn: turn, status: status}) do
-    IO.puts("""
-    ============================
-    Game Status: #{status}
-    Turn: #{turn}
-    ----------------------------
-    Player: #{player.name}
-    Life: #{player.life}/100
-    ----------------------------
-    Computer: #{computer.name}
-    Life: #{computer.life}/100
-    ============================
-    """)
+  def print_game_status(%{status: :started} = info) do
+    IO.puts("\nGame started!")
+    IO.inspect(info)
+    IO.puts("==============================")
+  end
+
+  def print_game_status(%{status: :continue, turn: player} = info) do
+    IO.puts("\nIt's #{player}'s turn!")
+    IO.inspect(info)
+    IO.puts("==============================")
+  end
+
+  def print_game_status(%{status: :game_over} = info) do
+    IO.puts("\nThe game is over")
+    IO.inspect(info)
+    IO.puts("==============================")
   end
 
   def print_wrong_move_message(move) do
