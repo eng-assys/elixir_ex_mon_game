@@ -11,7 +11,8 @@ defmodule ElixirExMonGame do
   end
 
   def start_game(player) do
-    computer = create_player("Robotinick", :punch, :kick, :heal)
-    Game.start(computer, player)
+    "Robotinick"
+    |> create_player(:punch, :kick, :heal)
+    |> Game.start(player)
   end
 end
