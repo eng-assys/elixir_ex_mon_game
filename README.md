@@ -45,3 +45,8 @@ be found at <https://hexdocs.pm/elixir_ex_mon_game>.
 ```bash
 iex -S mix
 ```
+
+## Run Lint Analyser
+```bash
+mix credo
+```
