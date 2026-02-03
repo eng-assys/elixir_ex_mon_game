@@ -1,6 +1,7 @@
 defmodule ElixirExMonGame.Player do
-  @enforce_keys [:life, :name, :move_rnd, :move_avg, :move_heal]
-  defstruct [:life, :name, :move_rnd, :move_avg, :move_heal]
+  required_keys = [:life, :name, :move_rnd, :move_avg, :move_heal]
+  @enforce_keys required_keys
+  defstruct required_keys
 
   # ElixirExMonGame.Player.build("Lucas", :chute, :soco, :cura)
   @spec build(any(), any(), any(), any()) :: %ElixirExMonGame.Player{
