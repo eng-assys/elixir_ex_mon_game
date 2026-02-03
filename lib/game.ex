@@ -12,4 +12,5 @@ defmodule ElixirExMonGame.Game do
 
   def player, do: info().player
   def computer, do: info().computer
+  def turn, do: Map.get(info(), :turn)
 end
