@@ -51,4 +51,31 @@ defmodule ElixirExMonGameTest do
       assert messages =~ "status: :started"
     end
   end
+
+  describe "make_move/1" do
+    test "when the move is valid, do the move and the computer makes a move" do
+      player = Player.build("Lucas", :chute, :soco, :cura)
+      ElixirExMonGame.start_game(player)
+
+      messages = capture_io(fn -> ElixirExMonGame.make_move(:soco) end)
+
+      assert messages =~ "The Player attacked the computer"
+      assert messages =~ "It's computer's turn!"
+      assert messages =~ "The Computer attacked the Player"
+      assert messages =~ "It's player's turn!"
+      assert messages =~ "status: :continue"
+
+    end
+
+    test "when the move is invalid, prints a wrong move message" do
+      player = Player.build("Lucas", :chute, :soco, :cura)
+      ElixirExMonGame.start_game(player)
+
+      expected_output = "The move 'invalid_move' is not valid. Please choose a valid move.\n"
+
+      messages = capture_io(fn -> ElixirExMonGame.make_move(:invalid_move) end)
+
+      assert messages == expected_output
+    end
+  end
 end
