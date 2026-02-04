@@ -62,4 +62,5 @@ ElixirExMonGame.start_game(player)
 ElixirExMonGame.Game.info
 ElixirExMonGame.make_move(:chute)
 ElixirExMonGame.Game.info
+ElixirExMonGame.make_move(:cura)
 ```
