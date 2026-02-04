@@ -3,6 +3,7 @@ defmodule ElixirExMonGame do
   alias ElixirExMonGame.Game.{Status, Actions}
 
   @computer_name "Robotinick"
+  @computer_moves [:move_avg, :move_rnd, :move_heal]
   @doc """
     Creates a player
     ElixirExMonGame.create_player("Lucas", :chute, :soco, :cura)
@@ -23,6 +24,8 @@ defmodule ElixirExMonGame do
     move
     |> Actions.fetch_move()
     |> do_move()
+
+    computer_move(Game.info())
   end
 
   defp do_move({:error, move}), do: Status.print_wrong_move_message(move)
@@ -34,4 +37,10 @@ defmodule ElixirExMonGame do
 
     Status.print_game_status(Game.info())
   end
+
+  defp computer_move(%{status: :continue, turn: :computer}) do
+    move = {:ok, Enum.random(@computer_moves)}
+    do_move(move)
+  end
+  defp computer_move(_), do: :ok
 end
