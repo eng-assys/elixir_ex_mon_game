@@ -11,8 +11,8 @@ defmodule ElixirExMonGame.Game.Actions do
 
   def heal do
     case Game.turn() do
-      :player -> Heal.heal_player(:player)
-      :computer -> Heal.heal_player(:computer)
+      :player -> Heal.heal_life(:player)
+      :computer -> Heal.heal_life(:computer)
     end
   end
 
