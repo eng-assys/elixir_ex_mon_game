@@ -1,5 +1,6 @@
 defmodule ElixirExMonGame.Game.Actions.Heal do
   alias ElixirExMonGame.Game
+  alias ElixirExMonGame.Game.Status
 
   @heal_power 18..25
 
@@ -23,4 +24,13 @@ defmodule ElixirExMonGame.Game.Actions.Heal do
     |> Map.put(:life, life)
     |> update_game(player_type, life)
   end
+
+  defp update_game(player, player_type, life) do
+    Game.info()
+    |> Map.put(player_type, player)
+    |> Game.update()
+
+    Status.print_move_message(player_type, :heal, life)
+  end
+
 end
