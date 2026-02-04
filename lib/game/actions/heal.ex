@@ -6,6 +6,7 @@ defmodule ElixirExMonGame.Game.Actions.Heal do
 
   def heal_life(player_type) do
     IO.puts("\nIt's #{player_type}'s turn to heal!")
+
     player_type
     |> Game.fetch_player()
     |> Map.get(:life)
@@ -32,5 +33,4 @@ defmodule ElixirExMonGame.Game.Actions.Heal do
 
     Status.print_move_message(player_type, :heal, life)
   end
-
 end

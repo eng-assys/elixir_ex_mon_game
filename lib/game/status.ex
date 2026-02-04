@@ -36,5 +36,4 @@ defmodule ElixirExMonGame.Game.Status do
   def print_move_message(:player, :heal, heal_amount) do
     IO.puts("The Player healed itself for #{heal_amount} life points!")
   end
-
 end
